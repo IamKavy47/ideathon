@@ -2251,9 +2251,9 @@ marquee {
 }
 
 .about-us-txt {
-  font-size: 1.5vw;
+  font-size: 5.5vw;
   font-family: 'Monument', sans-serif;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   line-height: 50px;
   object-fit: contain;
   text-transform: uppercase;
