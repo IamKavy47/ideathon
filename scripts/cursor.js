@@ -4,7 +4,7 @@ document.body.appendChild(cursor);
 
 const updateCursor = (x, y) => {
   cursor.style.left = `${x}px`;
-  caursor.style.top = `${y}px`;
+  cursor.style.top = `${y}px`;
 };
 
 document.addEventListener("mousemove", (event) => {

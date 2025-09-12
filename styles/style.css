@@ -454,7 +454,7 @@ video {
 }
 
 .logo {
-  height: 15px;
+  height: 55px;
   /* Adjust logo size */
   width: auto;
 }
@@ -2329,3 +2329,7 @@ marquee {
   margin-bottom: 5%;
 }
 
+#kavy, #cb{
+  color: #8d8d8d;
+  text-decoration: none;
+}

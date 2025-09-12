@@ -4,7 +4,7 @@ const volumeSlider = document.getElementById("volume-slider");
 
 // List of songs with paths
 const songs = [
-  "../music/Sanity.wav",
+  "../music/bgm.wav",
   "../music/10.80.wav",
   "../music/YouMightNotKnow.wav",
   "../music/GreetMe.wav",

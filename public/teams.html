@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behind The Scenes</title>
+    <link id="favicon" rel="icon" type="image/webp" href="../favicon/7.webp">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/res.css">
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "t2frh4w205");
+</script>
+</head>
+
+<body>
+
+    <img src="../assets/noise-2.gif" class="noise">
+    <audio id="hover-music" src="./music/link-music.wav" preload="auto"></audio>
+
+    <div class="events-loader">
+        <img src="/assets/noise-2.gif" class="noise">
+        <div class="ev-one">Behind the <br> Scenes</div>
+
+        <div class="h-scroll">
+            Introducing the ThinkUp'25<br>  Team
+        </div>
+
+        <div class="items">
+
+        </div>
+    </div>
+
+
+    <div class="main-content">
+        <nav class="navbar href-music">
+            <div class="navbar-left">
+                <!-- Logo Link -->
+                <a href="../index.html" class="nav-logo">
+                    <img src="/imgs/official.webp" alt="Logo" class="logo">
+                </a>
+                <!-- Navigation Links -->
+                <a href="https://www.google.com/search?q=srm+ap+&sca_esv=37b8e5acbf81c988&sxsrf=ADLYWIL5sVBdyU7Lw-a7R9cV0T3xBOKLEg%3A1736312214056&ei=lgV-Z8eNA4uW4-EPv4m-0Qw&ved=0ahUKEwjHsPOFq-WKAxULyzgGHb-EL8oQ4dUDCBA&uact=5&oq=srm+ap+&gs_lp=Egxnd3Mtd2l6LXNlcnAiB3NybSBhcCAyChAjGIAEGCcYigUyBRAAGIAEMgUQABiABDIFEC4YgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgoQABiABBgUGIcCMgUQABiABEi3BlDQBFjQBHACeAGQAQCYAVigAViqAQExuAEDyAEA-AEBmAIDoAJgwgIKEAAYsAMY1gQYR8ICDRAuGIAEGLADGEMYigWYAwCIBgGQBgmSBwEzoAfyCA&sclient=gws-wiz-serp"
+                    class="nav-link " id="timeDisplay"></a>
+
+
+            </div>
+            <div class="navbar-right">
+                <div class="navbar-effect">
+                    <a href="#" class="nav-link href-music">Menu</a>
+                </div>
+            </div>
+        </nav>
+        <div class="menu-overlay" data-overlay>
+
+            <img src="/assets/noise-2.gif" class="noise">
+
+            <div class="menu-content">
+                <!-- Left Column -->
+                <div class="menu-left">
+                    <video class="menu-video" autoplay muted loop>
+                        <source src="../assets/cyber-3.webm" type="video/webm">
+                    </video>
+                </div>
+
+                <!-- Right Column -->
+                <div class="menu-right">
+                    <div class="close-container">
+                        <div class="menu-close " data-close>[Close]</div>
+                    </div>
+                    <div class="menu-links-new">
+                        <div class="container">
+                            <a href="../index.html" class="text" id="index">Index</a>
+                            <a href="aboutus.html" class="text" id="about">About</a>
+                            <!-- <a href="proshows.html" class="text" id="proshows">Pro Shows</a> -->
+                            <!-- <a href="Events.html" class="text" id="events">Events</a> -->
+                            <a href="teams.html" class="text" id="team">Team</a>
+                            <a href="https://hacksrm25.vercel.app/" class="text" id="hack">ThinkUp'25</a>
+                            <a href="faq.html" class="text" id="faq">FAQ</a>
+                        </div>
+                    </div>
+                    <div class="menu-links-new-2">
+                        <!-- <div class="column">
+                            <a href="non-technical.html">Non-Technical</a>
+                            <a href="cultural-events.html">Cultural</a>
+                            <a href="technical-events.html">Technical</a>
+                        </div> -->
+                        <div class="column">
+                            <a href="aboutus.html">About</a>
+                            <a href="https://www.instagram.com/srmuap.infinitus/?hl=en">Instagram</a>
+                            <!-- <a href="https://linktr.ee/srmuapstudentcouncil">Linktree</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="music-player">
+            <audio id="bg-music" autoplay loop>
+                <source src="../music/Sanity.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+            <div id="player-controls">
+                <button onclick="prevSong()">
+                    [Prev]
+                    <!-- <img src="./assets/next-button.webp" class="player-icon-left"> -->
+                </button>
+                <button onclick="togglePlayPause()">
+                    Pause
+                    <!-- <img src="./assets/pause-w.webp" class="player-icon-pause"> -->
+                </button>
+                <button onclick="nextSong()">
+                    <!-- <img src="./assets/next-button.webp" class="player-icon-right"> -->
+                    [Next]
+                </button>
+                <!-- <input id="volume-slider" type="range" min="0" max="1" step="0.1" value="1" title="Volume" /> -->
+            </div>
+        </div>
+
+        <div class="bottom-text">
+            <span class="bottom-text__left shuffle-text">Mandsaur, IN</span>
+            <span class="bottom-text__center ">
+                <a href="javascript:void(0);" onclick="openMusicPlayer()">
+                    <img src="../imgs/music.webp" class="music-icon" title="Music">
+                </a>
+            </span>
+            <span class="bottom-text__right shuffle-text">2025</span>
+        </div>
+
+        <!-- content goes here -->
+
+        <div class="sliding-intro-container">
+            <div class="sliding-intro">
+                <span style="display:flex">
+                    <div class="half1">MEET</div>
+                    <div class="half1">THE</div>
+                    <div class="half2">TEAM</div>
+                </span>
+                <span style="display:flex">
+                    <div class="half1">MEET</div>
+                    <div class="half1">THE</div>
+                    <div class="half2">TEAM</div>
+                </span>
+                <span style="display:flex">
+                    <div class="half1">MEET</div>
+                    <div class="half1">THE</div>
+                    <div class="half2">TEAM</div>
+                </span>
+                <span style="display:flex">
+                    <div class="half1">MEET </div>
+                    <div class="half1">THE</div>
+                    <div class="half2">TEAM</div>
+                </span>
+
+                <span style="display:flex">
+                    <div class="half1">MEET</div>
+                    <div class="half1">THE</div>
+                    <div class="half2">TEAM</div>
+                </span>
+
+
+                <span style="display:flex">
+                    <div class="half1">MEET</div>
+                    <div class="half1">THE</div>
+                    <div class="half2">TEAM</div>
+                </span>
+
+
+                <span style="display:flex">
+                    <div class="half1">MEET</div>
+                    <div class="half1">THE</div>
+                    <div class="half2">TEAM</div>
+                </span>
+            </div>
+        </div>
+
+        <!-- content ends here -->
+
+        <div class="wrapper">
+            <div class="team-container">
+                <!-- Team 1 -->
+                <div class="team">
+                    <div class="team-heading">
+                        <p class="team-heading-text">Chancellor Brigade Committee</p>
+                    </div>
+                    <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">Aditya Joshi</span>
+                        <span class="role">Chancellor Brigade Chief</span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/President.webp">
+
+                        </div>
+                    </div>
+                    <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">Hardik Soni</span>
+                        <span class="role">Technical Committee Core</span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/President.webp">
+
+                        </div>
+                    </div>
+                    <div class="team-member" onmouseover="showCard(2)" onmouseout="hideCard(2)" onclick="toggleCard(2)">
+                        <span class="name">Jigyasa Joshi</span>
+                        <span class="role">Technical Committee Core</span>
+                        <div class="card" id="card-2">
+                            <img src="/imgs/teams-imgs/Vice president.webp">
+
+                        </div>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">Bhavesh Rathore</span>
+                        <span class="role">Sports Committee Core</span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/General Secretary.webp">
+
+                        </div>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">Dipesh Kumawat</span>
+                        <span class="role">Media Committee Core</span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/Treasurer.webp">
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">Sumit Chaudhary</span>
+                        <span class="role">Marketing Committee Core</span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/Events Executive.webp">
+
+                        </div>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">Niyati Jain</span>
+                        <span class="role">Placement Committee Core</span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/Technical Executive.webp">
+
+                        </div>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">Harshvardhan Singh Solanki</span>
+                        <span class="role">Cultural Committee Core</span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/PR executive.webp">
+
+                        </div>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">Purvak Joshi</span>
+                        <span class="role">Cultural Committee Core</span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/Writers executive.webp">
+
+                        </div>
+                    </div>
+
+                    <!-- <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">Rani Gummadi</span>
+                        <span class="role">Academic Wing executive</span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/Academics executive.webp">
+
+                        </div>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">B Sai Manoj</span>
+                        <span class="role">Discipline Committee executive</span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/DC executive.webp">
+
+                        </div>
+                    </div>
+                    <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">A Santhosh Kumar</span>
+                        <span class="role">Discipline Committee executive</span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/DC executive (2).webp">
+
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- Team 1 -->
+                <div class="team">
+                    <div class="team-heading">
+                        <p class="team-heading-text">Technical Heads</p>
+                    </div>
+
+                    <!-- website team -->
+                    <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">Kavy Porwal </span>
+                        <span class="role"></span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/kavy.jpg">
+
+                        </div>
+                    </div>
+                    <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">Chetanya Parmar</span>
+                        <span class="role"></span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/chinu.png">
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="wrapper">
+            <div class="team-container">
+
+                <!-- Events -->
+                <!-- <div class="team">
+                    <div class="team-heading">
+                        <p class="team-heading-text">Events Committee</p>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(4)" onmouseout="hideCard(4)" onclick="toggleCard(4)">
+                        <span class="name">Sairam Koushal Kadambari</span>
+                        <span class="role">Technical Head</span>
+                        <div class="card" id="card-4">
+                            <img src="/imgs/teams-imgs/Tech events head.webp">
+
+                        </div>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(3)" onmouseout="hideCard(3)" onclick="toggleCard(3)">
+                        <span class="name">Nipun Sai Kokonda</span>
+                        <span class="role">Cultural Head</span>
+                        <div class="card" id="card-3">
+                            <img src="/imgs/teams-imgs/Cultural events head.webp">
+
+                        </div>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(4)" onmouseout="hideCard(4)" onclick="toggleCard(4)">
+                        <span class="name">Sathwik Garikapati </span>
+                        <span class="role">Non-Technical Head</span>
+                        <div class="card" id="card-4">
+                            <img src="/imgs/teams-imgs/Non-tech events head.webp">
+
+                        </div>
+                    </div>
+                    <div class="team-member" onmouseover="showCard(3)" onmouseout="hideCard(3)" onclick="toggleCard(3)">
+                        <span class="name">M Abhinav Teja </span>
+                        <span class="role">Cultural Co-Head</span>
+                        <div class="card" id="card-3">
+                            <img src="/imgs/teams-imgs/cultural events co head.webp">
+
+                        </div>
+                    </div>
+                    <div class="team-member" onmouseover="showCard(4)" onmouseout="hideCard(4)" onclick="toggleCard(4)">
+                        <span class="name">Vedansh Rathore </span>
+                        <span class="role">Technical co-Head</span>
+                        <div class="card" id="card-4">
+                            <img src="/imgs/teams-imgs/tech events co-head.webp">
+
+                        </div>
+                    </div>
+                    <div class="team-member" onmouseover="showCard(4)" onmouseout="hideCard(4)" onclick="toggleCard(4)">
+                        <span class="name">Prosnita Saha</span>
+                        <span class="role">Non-Technical co-Head</span>
+                        <div class="card" id="card-4">
+                            <img src="/imgs/teams-imgs/Non Tech Events Co Head.webp">
+
+                        </div>
+                    </div>
+
+                    <div class="team">
+                        <div class="team-heading">
+                            <p class="team-heading-text">Discipline committee</p>
+                        </div>
+    
+                        Discipline
+                        <div class="team-member" onmouseover="showCard(13)" onmouseout="hideCard(13)"
+                            onclick="toggleCard(13)">
+                            <span class="name">Manikanta Borra</span>
+                            <span class="role">Discipline Head</span>
+                            <div class="card" id="card-13">
+                                <img src="/imgs/teams-imgs/DC head.webp">
+                            </div>
+                        </div>
+    
+                        <div class="team-member" onmouseover="showCard(14)" onmouseout="hideCard(14)"
+                            onclick="toggleCard(14)">
+                            <span class="name">K. Leela Krishna Reddy</span>
+                            <span class="role">Discipline Co-Head</span>
+                            <div class="card" id="card-14">
+                                <img src="/imgs/teams-imgs/DC co head.webp">
+                            </div>
+                        </div>
+    
+                    </div>
+                </div> -->
+
+
+
+                <!-- Team 1 -->
+                <!-- <div class="team">
+                    <div class="team-heading">
+                        <p class="team-heading-text">Technical Committee</p>
+                    </div> -->
+
+
+                    <!-- design team -->
+
+                    <!-- <div class="team-member" onmouseover="showCard(1)" onmouseout="hideCard(1)" onclick="toggleCard(1)">
+                        <span class="name">Prasanna Kumar Dheekonda</span>
+                        <span class="role">Design Head</span>
+                        <div class="card" id="card-1">
+                            <img src="/imgs/teams-imgs/Design Head.webp">
+
+                        </div>
+                    </div>
+                    <div class="team-member" onmouseover="showCard(2)" onmouseout="hideCard(2)" onclick="toggleCard(2)">
+                        <span class="name">Animesh Muduli </span>
+                        <span class="role">Design-co Head</span>
+                        <div class="card" id="card-2">
+                            <img src="/imgs/teams-imgs/Design Co-Head.webp">
+
+                        </div>
+                    </div> -->
+
+                    <!-- post production team -->
+
+                    <!-- <div class="team-member" onmouseover="showCard(2)" onmouseout="hideCard(2)" onclick="toggleCard(2)">
+                        <span class="name">Navanit Reddy Turpinti </span>
+                        <span class="role">post production head</span>
+                        <div class="card" id="card-2">
+                            <img src="/imgs/teams-imgs/Post production head.webp">
+
+                        </div>
+                    </div>
+                    <div class="team-member" onmouseover="showCard(2)" onmouseout="hideCard(2)" onclick="toggleCard(2)">
+                        <span class="name">Muthyala Sai Venkat </span>
+                        <span class="role">Post production co-head</span>
+                        <div class="card" id="card-2">
+                            <img src="/imgs/teams-imgs/Post production Co head.webp">
+
+                        </div>
+                    </div> -->
+
+
+
+                    <!-- photography -->
+
+                    <!-- <div class="team-member" onmouseover="showCard(2)" onmouseout="hideCard(2)" onclick="toggleCard(2)">
+                        <span class="name">Puli Jayadhar Reddy </span>
+                        <span class="role">Photography Head</span>
+                        <div class="card" id="card-2">
+                            <img src="/imgs/teams-imgs/photography society head.webp">
+
+                        </div>
+                    </div> -->
+
+                    <!-- media production -->
+
+                    <!-- <div class="team-member" onmouseover="showCard(2)" onmouseout="hideCard(2)" onclick="toggleCard(2)">
+                        <span class="name">Mohnish Jason </span>
+                        <span class="role">Media Production Head</span>
+                        <div class="card" id="card-2">
+                            <img src="../imgs/teams-imgs/Media Production Head.webp">
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="team-member" onmouseover="showCard(2)" onmouseout="hideCard(2)" onclick="toggleCard(2)">
+                        <span class="name">T. joyson</span>
+                        <span class="role">Media Production co-head</span>
+                        <div class="card" id="card-2">
+                            <img src="/imgs//teams-imgs/Media Production Co-head.webp">
+
+                        </div>
+                    </div> -->
+                <!-- </div> -->
+
+
+
+
+                <!-- <div class="team">
+                    <div class="team-heading">
+                        <p class="team-heading-text">Public Relations</p>
+                    </div> -->
+
+
+
+                    <!-- BR (Business Relations) -->
+                    <!-- <div class="team-member" onmouseover="showCard(3)" onmouseout="hideCard(3)" onclick="toggleCard(3)">
+                        <span class="name">Rohan Reddy</span>
+                        <span class="role">BR Head</span>
+                        <div class="card" id="card-3">
+                            <img src="/imgs/teams-imgs/Business Relations Head.webp">
+                        </div>
+                    </div> -->
+
+                    <!-- BR (Business Relations) -->
+                    <!-- <div class="team-member" onmouseover="showCard(3)" onmouseout="hideCard(3)" onclick="toggleCard(3)">
+                        <span class="name">Jaheer</span>
+                        <span class="role">BR co-Head</span>
+                        <div class="card" id="card-3">
+                            <img src="/imgs/teams-imgs/Business Relations CO-Head.webp">
+                        </div>
+                    </div>
+ -->
+
+
+                    <!-- Outreach -->
+                    <!-- <div class="team-member" onmouseover="showCard(4)" onmouseout="hideCard(4)" onclick="toggleCard(4)">
+                        <span class="name">Anirudh Sharma</span>
+                        <span class="role">Outreach Head</span>
+                        <div class="card" id="card-4">
+                            <img src="/imgs/teams-imgs/Outreach head.webp">
+                        </div>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(5)" onmouseout="hideCard(5)" onclick="toggleCard(5)">
+                        <span class="name">Manoj Kumar</span>
+                        <span class="role">Outreach Co-Head</span>
+                        <div class="card" id="card-5">
+                            <img src="/imgs/teams-imgs/Outreach co head.webp">
+                        </div>
+                    </div> -->
+
+
+                    <!-- Publicity -->
+                    <!-- <div class="team-member" onmouseover="showCard(6)" onmouseout="hideCard(6)" onclick="toggleCard(6)">
+                        <span class="name">Kammula Rohan</span>
+                        <span class="role">Publicity Head</span>
+                        <div class="card" id="card-6">
+                            <img src="/imgs/teams-imgs/Publicity Head.webp">
+                        </div>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(7)" onmouseout="hideCard(7)" onclick="toggleCard(7)">
+                        <span class="name">B. Sai Vashist</span>
+                        <span class="role">Publicity Co-Head</span>
+                        <div class="card" id="card-7">
+                            <img src="/imgs/teams-imgs/Publicity co head.webp">
+                        </div>
+                    </div> -->
+
+                    <!-- Hospitality -->
+                    <!-- <div class="team-member" onmouseover="showCard(16)" onmouseout="hideCard(16)"
+                        onclick="toggleCard(16)">
+                        <span class="name">Beecha Venkata Naga Hareesh</span>
+                        <span class="role">Hospitality Head</span>
+                        <div class="card" id="card-16">
+                            <img src="/imgs/teams-imgs/hospitality head.webp">
+                        </div>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(17)" onmouseout="hideCard(17)"
+                        onclick="toggleCard(17)">
+                        <span class="name">Rakesh Settippalli</span>
+                        <span class="role">Hospitality Co-Head</span>
+                        <div class="card" id="card-17">
+                            <img src="/imgs/teams-imgs/hospitality co head.webp">
+                        </div>
+
+                    </div> -->
+
+
+                    <!-- Registrations -->
+                    <!-- <div class="team-member" onmouseover="showCard(8)" onmouseout="hideCard(8)" onclick="toggleCard(8)">
+                        <span class="name">Sri Nandan Talluri</span>
+                        <span class="role">Registrations Head</span>
+                        <div class="card" id="card-8">
+                            <img src="/imgs/teams-imgs/Registrations head.webp">
+                        </div>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(9)" onmouseout="hideCard(9)" onclick="toggleCard(9)">
+                        <span class="name">Yarramasu Preran Sai</span>
+                        <span class="role">Registrations Co-Head</span>
+                        <div class="card" id="card-9">
+                            <img src="/imgs/teams-imgs/Registrations Co-head.webp">
+                        </div>
+                    </div>
+
+                </div> -->
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- container 3 -->
+        <div class="wrapper">
+            <div class="team-container">
+
+
+                <!-- <div class="team">
+                    <div class="team-heading">
+                        <p class="team-heading-text">Writers & Documentation</p>
+                    </div>
+
+
+                    writer and docs
+                    <div class="team-member" onmouseover="showCard(2)" onmouseout="hideCard(2)" onclick="toggleCard(2)">
+                        <span class="name">Keerthi Tanmai Majety </span>
+                        <span class="role">Writers & Docs Head</span>
+                        <div class="card" id="card-2">
+                            <img src="/imgs/teams-imgs/Documentation head.webp">
+
+                        </div>
+                    </div>
+                    <div class="team-member" onmouseover="showCard(2)" onmouseout="hideCard(2)" onclick="toggleCard(2)">
+                        <span class="name">Tamanna Mittal </span>
+                        <span class="role">Writers & Docs co-Head</span>
+                        <div class="card" id="card-2">
+                            <img src="/imgs/teams-imgs/Documentation co head.webp">
+
+                        </div>
+                    </div>
+                </div> -->
+
+
+                <!-- Events -->
+                <!-- <div class="team"> -->
+                    <!-- <div class="team-heading">
+                        <p class="team-heading-text"> Accommodation Committee</p>
+                    </div> -->
+                    <!-- Accomodation -->
+                    <!-- <div class="team-member" onmouseover="showCard(10)" onmouseout="hideCard(10)"
+                        onclick="toggleCard(10)">
+                        <span class="name">Akhil .M</span>
+                        <span class="role">Accomodation Head</span>
+                        <div class="card" id="card-10">
+                            <img src="/imgs/teams-imgs/Accommodation Head.webp">
+                        </div>
+                    </div>
+                    <div class="team-member" onmouseover="showCard(10)" onmouseout="hideCard(10)"
+                        onclick="toggleCard(10)">
+                        <span class="name">D. Wasim Raja</span>
+                        <span class="role">Accomodation co-Head</span>
+                        <div class="card" id="card-10">
+                            <img src="/imgs/teams-imgs/Accomodation Cohead.webp">
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Events -->
+                <div class="team">
+                    <div class="team-heading">
+                        <p class="team-heading-text">ThinkUp'25</p>
+                    </div>
+
+                    <!-- HackSRM -->
+                    <!-- <div class="team-member" onmouseover="showCard(11)" onmouseout="hideCard(11)"
+                        onclick="toggleCard(11)">
+                        <span class="name">Dave Meshak J</span>
+                        <span class="role">HackSRM Head</span>
+                        <div class="card" id="card-11">
+                            <img src="/imgs/teams-imgs/HackSRM Lead.webp">
+                        </div>
+                    </div>
+
+                    <div class="team-member" onmouseover="showCard(12)" onmouseout="hideCard(12)"
+                        onclick="toggleCard(12)">
+                        <span class="name">Meghana Kiran</span>
+                        <span class="role">HackSRM Co-Head</span>
+                        <div class="card" id="card-12">
+                            <img src="/imgs/teams-imgs/HackSRM Co-Lead.webp">
+                        </div>
+                    </div> -->
+                </div>
+
+
+
+                
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+    <br><br>
+    <br><br>
+    <br><br>
+    <div id="footer">
+        <div class="footerTop">
+            <div class="footerLogo">
+                <p>[TECHNO-CULTURAL FEST]</p>
+                <h1>ThinkUp '25</h1>
+            </div>
+
+
+
+            <div class="footerLinks">
+                <div class="footerColumn">
+
+                    <p class="linkHead">[NAVIGATE]</p>
+                    <div class="linkContainer">
+                        <a href="/public/aboutus.html" class="links">
+                            <p>001</p>
+                            <p>ABOUT</p>
+                        </a>
+                        <!-- <a href="/public/proshows.html" class="links">
+                            <p>002</p>
+                            <p>PROSHOWS</p>
+                        </a> -->
+                        <!-- <a href="/public/technical-events.html" class="links">
+                            <p>003</p>
+                            <p>EVENTS</p>
+                        </a> -->
+                        <a href="https://hacksrm25.vercel.app/" class="links">
+                            <p>004</p>
+                            <p>ThinkUp'25</p>
+                        </a>
+                        <a href="/public/teams.html" class="links">
+                            <p>005</p>
+                            <p>TEAM</p>
+                        </a>
+                        <a href="/public/faq.html" class="links">
+                            <p>006</p>
+                            <p>FAQ</p>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- <div class="footerColumn">
+                    <p class="linkHead">[PRO SHOWS]</p>
+                    <div class="linkContainer">
+                        <a href="/public/proshows.html" class="links">
+                            <p>001</p>
+                            
+                        </a>
+                        <a href="/public/proshows.html" class="links">
+                            <p>002</p>
+                        </a>
+                        <a href="/public/proshows.html" class="links">
+                            <p>003</p>
+                            
+                        </a>
+                    </div>
+                </div> -->
+
+                <div class="footerColumn">
+                    <!-- <p class="linkHead">[EVENTS]</p>
+                    <div class="linkContainer">
+                        <a href="/public/cultural-events.html" class="links">
+                            <p>001</p>
+                            <p>CULTURAL</p>
+                        </a>
+                        <a href="/public/non-technical.html" class="links">
+                            <p>002</p>
+                            <p>NON Technical</p>
+                        </a>
+                        <a href="/public/technical-events.html" class="links">
+                            <p>003</p>
+                            <p>TECHNICAL</p>
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="footerBottom">
+            <p>2025</p>
+
+            <div class="copyRights">
+                <div class="council">
+                    <p>Mandsaur University <br>POWERED BY <a class="links" href="https://www.instagram.com/chancellorbrigadeofficial/?hl=en">CHANCELLOR'S BRIGADE</a></p>
+                </div>
+
+                <div class="webTeam">
+                    <p>DESIGNED BY <br><a class="links" href="https://github.com/iamkavy47">Kavy Porwal</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="/scripts/favicon.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+
+    <script src="/scripts/events-loader.js"></script>
+    <script src="/scripts/cursor-follow.js"></script>
+    <script src="/scripts/cursor.js"></script>
+    <script src="/scripts/menu.js"></script>
+    <script src="/scripts/time.js"></script>
+    <script src="/scripts/teams-imgs.js"></script>
+
+    <script src="/scripts/link-hover.js"></script>
+    <script src="/scripts/music.js"></script>
+
+
+
+</body>
+
+</html>

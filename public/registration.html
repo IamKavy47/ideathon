@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkUp'25 Registration</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'VCR-Mono';
+            src: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VCR-Mono-tr1bRwVHOaRLV1Vzx4T8S0Ywpv9v4f.ttf') format('truetype');
+        }
+        
+        @font-face {
+            font-family: 'HelveticaNowDisplay-ExtBlk';
+            src: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HelveticaNowDisplay-ExtBlk-whQStsXLgCPVFUHbr0SXizdhhOqWaj.ttf') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'VCR-Mono', monospace;
+            background-color: #000000;
+            color: #888888;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #111111;
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(255, 0, 0, 0.1);
+            border: 1px solid #222222;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-family: 'HelveticaNowDisplay-ExtBlk', sans-serif;
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #888888;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #cccccc;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border: 2px solid #333333;
+            color: #ffffff;
+            font-size: 16px;
+            font-family: 'VCR-Mono', monospace;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff0000;
+            box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: white;
+            border: none;
+            font-size: 18px;
+            font-family: 'HelveticaNowDisplay-ExtBlk', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #cc0000, #990000);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #004400;
+            color: #00ff00;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .category-selection {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .category-option {
+            padding: 20px;
+            background-color: #1a1a1a;
+            border: 2px solid #333333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .category-option:hover {
+            border-color: #ff0000;
+        }
+
+        .category-option.selected {
+            border-color: #ff0000;
+            background-color: rgba(255, 0, 0, 0.1);
+        }
+
+        .category-option h3 {
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-family: 'HelveticaNowDisplay-ExtBlk', sans-serif;
+        }
+
+        .category-option p {
+            color: #888888;
+            font-size: 14px;
+        }
+
+        /* Added radio button styling for Google Forms compatibility */
+        .radio-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #1a1a1a;
+            border: 2px solid #333333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .radio-option:hover {
+            border-color: #ff0000;
+        }
+
+        .radio-option.selected {
+            border-color: #ff0000;
+            background-color: rgba(255, 0, 0, 0.1);
+        }
+
+        .radio-option input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+            accent-color: #ff0000;
+        }
+
+        .radio-option label {
+            color: #cccccc;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .form-row, .category-selection, .radio-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .loading {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffffff;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>THINKUP'25</h1>
+            <p>College Ideathon - Innovation Starts Here</p>
+        </div>
+
+        <div class="success-message" id="successMessage">
+            Registration successful! We'll contact you soon with more details.
+        </div>
+
+        <!-- Updated form action and method for Google Forms integration -->
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfJHyxZmb6ANYIhcWH1_FPasFbi13KDK4M5gFPG0g0sEM2z6g/formResponse" 
+              target="_self" 
+              id="registrationForm" 
+              method="POST">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <!-- Updated name attribute for Google Forms -->
+                    <input type="text" id="firstName" name="entry.1528804120" required>
+                    <div class="error-message" id="firstNameError">Please enter your first name</div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <!-- Updated name attribute for Google Forms -->
+                    <input type="text" id="lastName" name="entry.385720049" required>
+                    <div class="error-message" id="lastNameError">Please enter your last name</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <!-- Updated name attribute for Google Forms -->
+                <input type="email" id="email" name="entry.291084619" required>
+                <div class="error-message" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="rollNumber">Roll Number *</label>
+                    <!-- Updated name attribute for Google Forms -->
+                    <input type="text" id="rollNumber" name="entry.1535368087" required>
+                    <div class="error-message" id="rollNumberError">Please enter your roll number</div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <!-- Updated name attribute for Google Forms -->
+                    <input type="tel" id="phone" name="entry.1382967924" required>
+                    <div class="error-message" id="phoneError">Please enter your phone number</div>
+                </div>
+            </div>
+
+            <!-- Converted department dropdown to radio buttons for Google Forms -->
+            <div class="form-group">
+                <label>Department *</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1666341710" value="Computer Science" id="dept-cs">
+                        <label for="dept-cs">Computer Science</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1666341710" value="Information Technology" id="dept-it">
+                        <label for="dept-it">Information Technology</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1666341710" value="Electronics & Communication" id="dept-ece">
+                        <label for="dept-ece">Electronics & Communication</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1666341710" value="Electrical Engineering" id="dept-ee">
+                        <label for="dept-ee">Electrical Engineering</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1666341710" value="Mechanical Engineering" id="dept-me">
+                        <label for="dept-me">Mechanical Engineering</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1666341710" value="Civil Engineering" id="dept-ce">
+                        <label for="dept-ce">Civil Engineering</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1666341710" value="Business Administration" id="dept-ba">
+                        <label for="dept-ba">Business Administration</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1666341710" value="Commerce" id="dept-com">
+                        <label for="dept-com">Commerce</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1666341710" value="Economics" id="dept-eco">
+                        <label for="dept-eco">Economics</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1666341710" value="Other" id="dept-other">
+                        <label for="dept-other">Other</label>
+                    </div>
+                </div>
+                <div class="error-message" id="departmentError">Please select your department</div>
+            </div>
+
+            <!-- Converted year dropdown to radio buttons for Google Forms -->
+            <div class="form-group">
+                <label>Year of Study *</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1593476826" value="1st Year" id="year-1">
+                        <label for="year-1">1st Year</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1593476826" value="2nd Year" id="year-2">
+                        <label for="year-2">2nd Year</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1593476826" value="3rd Year" id="year-3">
+                        <label for="year-3">3rd Year</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1593476826" value="4th Year" id="year-4">
+                        <label for="year-4">4th Year</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.1593476826" value="Post Graduate" id="year-pg">
+                        <label for="year-pg">Post Graduate</label>
+                    </div>
+                </div>
+                <div class="error-message" id="yearError">Please select your year</div>
+            </div>
+
+            <!-- Updated category selection to use Google Forms entry name -->
+            <div class="form-group">
+                <label>Category *</label>
+                <div class="category-selection">
+                    <div class="category-option" data-category="Technical">
+                        <h3>TECHNICAL</h3>
+                        <p>Software, Hardware, AI/ML, Web Development, Mobile Apps</p>
+                        <input type="radio" name="entry.577565257" value="Technical" style="display: none;">
+                    </div>
+                    <div class="category-option" data-category="Business">
+                        <h3>BUSINESS</h3>
+                        <p>Business Models, Marketing, Finance, Social Impact</p>
+                        <input type="radio" name="entry.577565257" value="Business" style="display: none;">
+                    </div>
+                </div>
+                <div class="error-message" id="categoryError">Please select a category</div>
+            </div>
+
+            <div class="form-group">
+                <label for="ideaTitle">Idea Title *</label>
+                <!-- Updated name attribute for Google Forms -->
+                <input type="text" id="ideaTitle" name="entry.1790595735" placeholder="Give your idea a catchy title" required>
+                <div class="error-message" id="ideaTitleError">Please enter your idea title</div>
+            </div>
+
+            <div class="form-group">
+                <label for="ideaDescription">Idea Description *</label>
+                <!-- Updated name attribute for Google Forms -->
+                <textarea id="ideaDescription" name="entry.955261150" placeholder="Describe your idea, the problem it solves, and your proposed solution..." required></textarea>
+                <div class="error-message" id="ideaDescriptionError">Please describe your idea</div>
+            </div>
+
+            <!-- Updated team preference to use Google Forms entry name -->
+            <div class="form-group">
+                <label>Team Preference</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" name="entry.2080994360" value="Work Solo" id="team-solo">
+                        <label for="team-solo">Work Solo</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.2080994360" value="Join a Team" id="team-join">
+                        <label for="team-join">Join a Team</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="entry.2080994360" value="Either is Fine" id="team-either">
+                        <label for="team-either">Either is Fine</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Added Google Forms hidden fields -->
+            <input type="hidden" name="fvv" value="1">
+            <input type="hidden" name="fbzx" value="-4908767693340218001">
+            <input type="hidden" name="pageHistory" value="0">
+
+            <button type="submit" class="submit-btn">
+                REGISTER NOW
+                <div class="loading" id="loading"></div>
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // GSAP Animations
+        gsap.registerPlugin();
+
+        // Initial animations
+        gsap.timeline()
+            .from(".container", {
+                duration: 0.8,
+                y: 50,
+                opacity: 0,
+                ease: "power3.out"
+            })
+            .from(".header h1", {
+                duration: 0.6,
+                y: 30,
+                opacity: 0,
+                ease: "power2.out"
+            }, "-=0.4")
+            .from(".header p", {
+                duration: 0.6,
+                y: 20,
+                opacity: 0,
+                ease: "power2.out"
+            }, "-=0.3")
+            .to(".form-group, .submit-btn", {
+                duration: 0.6,
+                y: 0,
+                opacity: 1,
+                stagger: 0.1,
+                ease: "power2.out"
+            }, "-=0.2");
+
+        // Category selection
+        const categoryOptions = document.querySelectorAll('.category-option');
+
+        categoryOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                categoryOptions.forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+                
+                const radioButton = option.querySelector('input[type="radio"]');
+                radioButton.checked = true;
+                
+                gsap.to(option, {
+                    duration: 0.2,
+                    scale: 0.95,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: "power2.inOut"
+                });
+            });
+        });
+
+        const radioOptions = document.querySelectorAll('.radio-option');
+        
+        radioOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const radioButton = option.querySelector('input[type="radio"]');
+                const groupName = radioButton.name;
+                
+                // Remove selected class from all options in the same group
+                document.querySelectorAll(`input[name="${groupName}"]`).forEach(radio => {
+                    radio.closest('.radio-option').classList.remove('selected');
+                });
+                
+                // Add selected class to clicked option
+                option.classList.add('selected');
+                radioButton.checked = true;
+                
+                gsap.to(option, {
+                    duration: 0.2,
+                    scale: 0.95,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: "power2.inOut"
+                });
+            });
+        });
+
+        // Form validation
+        function validateForm() {
+            let isValid = true;
+            const requiredFields = ['entry.1528804120', 'entry.385720049', 'entry.291084619', 'entry.1535368087', 'entry.1382967924', 'entry.1790595735', 'entry.955261150'];
+            const requiredRadioGroups = ['entry.1666341710', 'entry.1593476826', 'entry.577565257'];
+            
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(error => {
+                error.style.display = 'none';
+            });
+
+            // Validate required text fields
+            requiredFields.forEach(fieldName => {
+                const field = document.querySelector(`[name="${fieldName}"]`);
+                const fieldId = field.id;
+                const errorElement = document.getElementById(fieldId + 'Error');
+                
+                if (!field.value.trim()) {
+                    if (errorElement) {
+                        errorElement.style.display = 'block';
+                        gsap.from(errorElement, {
+                            duration: 0.3,
+                            x: -10,
+                            ease: "power2.out"
+                        });
+                    }
+                    isValid = false;
+                }
+            });
+
+            // Validate required radio groups
+            requiredRadioGroups.forEach(groupName => {
+                const checkedRadio = document.querySelector(`input[name="${groupName}"]:checked`);
+                if (!checkedRadio) {
+                    // Show appropriate error message
+                    if (groupName === 'entry.1666341710') {
+                        document.getElementById('departmentError').style.display = 'block';
+                    } else if (groupName === 'entry.1593476826') {
+                        document.getElementById('yearError').style.display = 'block';
+                    } else if (groupName === 'entry.577565257') {
+                        document.getElementById('categoryError').style.display = 'block';
+                    }
+                    isValid = false;
+                }
+            });
+
+            // Validate email format
+            const email = document.querySelector('[name="entry.291084619"]');
+            const emailError = document.getElementById('emailError');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email.value && !emailRegex.test(email.value)) {
+                emailError.textContent = 'Please enter a valid email address';
+                emailError.style.display = 'block';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!validateForm()) {
+                return false;
+            }
+            
+            // Show loading state
+            const submitBtn = document.querySelector('.submit-btn');
+            const loading = document.getElementById('loading');
+            const form = this;
+            
+            submitBtn.style.opacity = '0.7';
+            submitBtn.style.pointerEvents = 'none';
+            loading.style.display = 'inline-block';
+            
+            const formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Required for Google Forms
+            }).then(() => {
+                document.getElementById('successMessage').style.display = 'block';
+                form.style.display = 'none';
+                
+                // Animate success message
+                gsap.from('#successMessage', {
+                    duration: 0.6,
+                    y: 20,
+                    opacity: 0,
+                    ease: "power2.out"
+                });
+            }).catch(() => {
+                document.getElementById('successMessage').style.display = 'block';
+                form.style.display = 'none';
+                
+                // Animate success message
+                gsap.from('#successMessage', {
+                    duration: 0.6,
+                    y: 20,
+                    opacity: 0,
+                    ease: "power2.out"
+                });
+            }).finally(() => {
+                // Reset button state
+                submitBtn.style.opacity = '1';
+                submitBtn.style.pointerEvents = 'auto';
+                loading.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
