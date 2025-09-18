@@ -221,6 +221,14 @@
             margin: 0;
         }
 
+        .valid-input {
+            border-color: #00ff00 !important;
+        }
+
+        .invalid-input {
+            border-color: #ff0000 !important;
+        }
+
         @media (max-width: 600px) {
             .container {
                 padding: 30px 20px;
@@ -292,67 +300,26 @@
             </div>
 
             <div class="form-row">
-                <!-- <div class="form-group">
-                    <label for="rollNumber">Roll Number *</label>
-                    Updated name attribute for Google Forms
-                    <input type="text" id="rollNumber" name="entry.1535368087" required>
-                    <div class="error-message" id="rollNumberError">Please enter your roll number</div>
-                </div> -->
                 <div class="form-group">
                     <label for="phone">Phone Number *</label>
                     <!-- Updated name attribute for Google Forms -->
                     <input type="tel" id="phone" name="entry.1382967924" required>
-                    <div class="error-message" id="phoneError">Please enter your phone number</div>
+                    <div class="error-message" id="phoneError">Please enter a valid 10-digit phone number</div>
+                </div>
+                <div class="form-group">
+                    <label for="city">City *</label>
+                    <!-- Added City field -->
+                    <input type="text" id="city" name="entry.1947326960" required>
+                    <div class="error-message" id="cityError">Please enter your city</div>
                 </div>
             </div>
 
-            <!-- Converted department dropdown to radio buttons for Google Forms -->
-            <!-- <div class="form-group">
-                <label>Department *</label>
-                <div class="radio-group">
-                    <div class="radio-option">
-                        <input type="radio" name="entry.1666341710" value="Computer Science" id="dept-cs">
-                        <label for="dept-cs">Computer Science</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" name="entry.1666341710" value="Information Technology" id="dept-it">
-                        <label for="dept-it">Information Technology</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" name="entry.1666341710" value="Electronics & Communication" id="dept-ece">
-                        <label for="dept-ece">Electronics & Communication</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" name="entry.1666341710" value="Electrical Engineering" id="dept-ee">
-                        <label for="dept-ee">Electrical Engineering</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" name="entry.1666341710" value="Mechanical Engineering" id="dept-me">
-                        <label for="dept-me">Mechanical Engineering</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" name="entry.1666341710" value="Civil Engineering" id="dept-ce">
-                        <label for="dept-ce">Civil Engineering</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" name="entry.1666341710" value="Business Administration" id="dept-ba">
-                        <label for="dept-ba">Business Administration</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" name="entry.1666341710" value="Commerce" id="dept-com">
-                        <label for="dept-com">Commerce</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" name="entry.1666341710" value="Economics" id="dept-eco">
-                        <label for="dept-eco">Economics</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" name="entry.1666341710" value="Other" id="dept-other">
-                        <label for="dept-other">Other</label>
-                    </div>
-                </div>
-                <div class="error-message" id="departmentError">Please select your department</div>
-            </div> -->
+            <div class="form-group">
+                <label for="college">College Name *</label>
+                <!-- Added College Name field -->
+                <input type="text" id="college" name="entry.575320933" placeholder="Enter your college/university name" required>
+                <div class="error-message" id="collegeError">Please enter your college name</div>
+            </div>
 
             <!-- Converted year dropdown to radio buttons for Google Forms -->
             <div class="form-group">
@@ -414,28 +381,9 @@
                 <div class="error-message" id="ideaDescriptionError">Please describe your idea</div>
             </div>
 
-            <!-- Updated team preference to use Google Forms entry name -->
-            <!-- <div class="form-group">
-                <label>Team Preference</label>
-                <div class="radio-group">
-                    <div class="radio-option">
-                        <input type="radio" name="entry.2080994360" value="Work Solo" id="team-solo">
-                        <label for="team-solo">Work Solo</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" name="entry.2080994360" value="Join a Team" id="team-join">
-                        <label for="team-join">Join a Team</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" name="entry.2080994360" value="Either is Fine" id="team-either">
-                        <label for="team-either">Either is Fine</label>
-                    </div>
-                </div>
-            </div> -->
-
             <!-- Added Google Forms hidden fields -->
             <input type="hidden" name="fvv" value="1">
-            <input type="hidden" name="fbzx" value="-4908767693340218001">
+            <input type="hidden" name="fbzx" value="-5686973111162058459">
             <input type="hidden" name="pageHistory" value="0">
 
             <button type="submit" class="submit-btn">
@@ -524,10 +472,62 @@
             });
         });
 
+        // Real-time validation functions
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function validatePhone(phone) {
+            // Remove all non-numeric characters
+            const cleanPhone = phone.replace(/\D/g, '');
+            // Check if it's 10 digits (Indian mobile number format)
+            return cleanPhone.length === 10 && /^[6-9]/.test(cleanPhone);
+        }
+
+        // Add real-time validation listeners
+        document.getElementById('email').addEventListener('input', function() {
+            const emailField = this;
+            const emailError = document.getElementById('emailError');
+            
+            if (emailField.value && !validateEmail(emailField.value)) {
+                emailField.classList.add('invalid-input');
+                emailField.classList.remove('valid-input');
+                emailError.textContent = 'Please enter a valid email address';
+                emailError.style.display = 'block';
+            } else if (emailField.value && validateEmail(emailField.value)) {
+                emailField.classList.add('valid-input');
+                emailField.classList.remove('invalid-input');
+                emailError.style.display = 'none';
+            } else {
+                emailField.classList.remove('valid-input', 'invalid-input');
+                emailError.style.display = 'none';
+            }
+        });
+
+        document.getElementById('phone').addEventListener('input', function() {
+            const phoneField = this;
+            const phoneError = document.getElementById('phoneError');
+            
+            if (phoneField.value && !validatePhone(phoneField.value)) {
+                phoneField.classList.add('invalid-input');
+                phoneField.classList.remove('valid-input');
+                phoneError.textContent = 'Please enter a valid 10-digit phone number';
+                phoneError.style.display = 'block';
+            } else if (phoneField.value && validatePhone(phoneField.value)) {
+                phoneField.classList.add('valid-input');
+                phoneField.classList.remove('invalid-input');
+                phoneError.style.display = 'none';
+            } else {
+                phoneField.classList.remove('valid-input', 'invalid-input');
+                phoneError.style.display = 'none';
+            }
+        });
+
         // Form validation
         function validateForm() {
             let isValid = true;
-            const requiredFields = ['entry.1528804120', 'entry.385720049', 'entry.291084619', 'entry.1382967924', 'entry.1790595735', 'entry.955261150'];
+            const requiredFields = ['entry.1528804120', 'entry.385720049', 'entry.291084619', 'entry.1382967924', 'entry.1947326960', 'entry.575320933', 'entry.1790595735', 'entry.955261150'];
             const requiredRadioGroups = ['entry.1593476826', 'entry.577565257'];
             
             // Clear previous errors
@@ -550,7 +550,10 @@
                             ease: "power2.out"
                         });
                     }
+                    field.classList.add('invalid-input');
                     isValid = false;
+                } else {
+                    field.classList.remove('invalid-input');
                 }
             });
 
@@ -559,9 +562,7 @@
                 const checkedRadio = document.querySelector(`input[name="${groupName}"]:checked`);
                 if (!checkedRadio) {
                     // Show appropriate error message
-                    if (groupName === 'entry.1666341710') {
-                        document.getElementById('departmentError').style.display = 'block';
-                    } else if (groupName === 'entry.1593476826') {
+                    if (groupName === 'entry.1593476826') {
                         document.getElementById('yearError').style.display = 'block';
                     } else if (groupName === 'entry.577565257') {
                         document.getElementById('categoryError').style.display = 'block';
@@ -573,11 +574,22 @@
             // Validate email format
             const email = document.querySelector('[name="entry.291084619"]');
             const emailError = document.getElementById('emailError');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             
-            if (email.value && !emailRegex.test(email.value)) {
+            if (email.value && !validateEmail(email.value)) {
                 emailError.textContent = 'Please enter a valid email address';
                 emailError.style.display = 'block';
+                email.classList.add('invalid-input');
+                isValid = false;
+            }
+
+            // Validate phone number
+            const phone = document.querySelector('[name="entry.1382967924"]');
+            const phoneError = document.getElementById('phoneError');
+            
+            if (phone.value && !validatePhone(phone.value)) {
+                phoneError.textContent = 'Please enter a valid 10-digit phone number';
+                phoneError.style.display = 'block';
+                phone.classList.add('invalid-input');
                 isValid = false;
             }
 
