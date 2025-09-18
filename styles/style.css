@@ -10,37 +10,37 @@
 
 @font-face {
   font-family: "VCR";
-  src: url("../fonts/VCR-Mono.ttf") format("truetype");
+  src: url("./fonts/VCR-Mono.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Helvetica Regular", sans-serif;
-  src: url("../fonts/HelveticaNowText-Regular.ttf") format("truetype");
+  src: url("./fonts/HelveticaNowText-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Helvetica";
-  src: url("../fonts/HelveticaNowDisplay-ExtBlk.ttf") format("truetype");
+  src: url("./fonts/HelveticaNowDisplay-ExtBlk.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Monument";
-  src: url("../fonts/MonumentExtended-Ultrabold.otf") format("opentype");
+  src: url("./fonts/MonumentExtended-Ultrabold.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Monument Regular";
-  src: url("../fonts/MonumentExtended-Regular.otf") format("opentype");
+  src: url("./fonts/MonumentExtended-Regular.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Offbit Dot Bold";
-  src: url("../fonts/OffBit-DotBold.otf") format("opentype");
+  src: url("./fonts/OffBit-DotBold.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Akkurat";
-  src: url("../fonts/Akkurat-Mono.OTF") format("opentype");
+  src: url("./fonts/Akkurat-Mono.OTF") format("opentype");
 }
 
 body {
