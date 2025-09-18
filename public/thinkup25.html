@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkUp'25 - Ideathon</title>
+    <link id="favicon" rel="icon" type="image/webp" href="../favicon/7.webp">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/res.css">
+
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "t2frh4w205");
+    </script>
+</head>
+
+<body>
+
+    <img src="../assets/noise-2.gif" class="noise">
+    <audio id="hover-music" src="./music/link-music.wav" preload="auto"></audio>
+
+    <div class="events-loader">
+        <img src="/assets/noise-2.gif" class="noise">
+        <div class="ev-one">ThinkUp <br> '25</div>
+
+        <div class="h-scroll">
+            Innovate. Ideate. <br> Elevate.
+        </div>
+
+        <div class="items">
+
+        </div>
+    </div>
+
+    <div class="main-content">
+        <nav class="navbar href-music">
+            <div class="navbar-left">
+                <!-- Logo Link -->
+                <a href="../index.html" class="nav-logo">
+                    <img src="/imgs/official.webp" alt="Logo" class="logo">
+                </a>
+                <!-- Navigation Links -->
+                <a href="https://www.google.com/search?q=srm+ap+&sca_esv=37b8e5acbf81c988&sxsrf=ADLYWIL5sVBdyU7Lw-a7R9cV0T3xBOKLEg%3A1736312214056&ei=lgV-Z8eNA4uW4-EPv4m-0Qw&ved=0ahUKEwjHsPOFq-WKAxULyzgGHb-EL8oQ4dUDCBA&uact=5&oq=srm+ap+&gs_lp=Egxnd3Mtd2l6LXNlcnAiB3NybSBhcCAyChAjGIAEGCcYigUyBRAAGIAEMgUQABiABDIFEC4YgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgoQABiABBgUGIcCMgUQABiABEi3BlDQBFjQBHACeAGQAQCYAVigAViqAQExuAEDyAEA-AEBmAIDoAJgwgIKEAAYsAMY1gQYR8ICDRAuGIAEGLADGEMYigWYAwCIBgGQBgmSBwEzoAfyCA&sclient=gws-wiz-serp"
+                    class="nav-link " id="timeDisplay"></a>
+            </div>
+            <div class="navbar-right">
+                <div class="navbar-effect">
+                    <a href="#" class="nav-link href-music">Menu</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="menu-overlay" data-overlay>
+            <img src="/assets/noise-2.gif" class="noise">
+
+            <div class="menu-content">
+                <!-- Left Column -->
+                <div class="menu-left">
+                    <video class="menu-video" autoplay muted loop>
+                        <source src="/assets/menu.mp4" type="video/webm">
+                    </video>    
+                </div>
+
+                <div class="menu-right">
+                    <div class="close-container">
+                        <div class="menu-close " data-close>[Close]</div>
+                    </div>
+                    <div class="menu-links-new">
+                        <div class="container">
+                            <a href="../index.html" class="text" id="index">Index</a>
+                            <!-- <a href="/public/aboutus.html" class="text" id="about">About</a> -->
+                            <a href="/public/teams.html" class="text" id="team">Team</a>
+                            <a href="/public/thinkup25.html" class="text" id="hack" style="color: #ff0000;">ThinkUp'25</a>
+                            <a href="/public/faq.html" class="text" id="faq">FAQ</a>
+                        </div>
+                    </div>
+                    <div class="menu-links-new-2">
+                        <div class="column">
+                            <!-- <a href="/public/aboutus.html">About</a> -->
+                            <a href="https://www.instagram.com/chancellorbrigadeofficial/?hl=en">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div id="music-player">
+            <audio id="bg-music" autoplay loop>
+                <source src="../music/bgm.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+            <div id="player-controls">
+                <button onclick="prevSong()">
+                    [Prev]
+                </button>
+                <button onclick="togglePlayPause()">
+                    Pause
+                </button>
+                <button onclick="nextSong()">
+                    [Next]
+                </button>
+            </div>
+        </div>
+
+        <div class="bottom-text">
+            <span class="bottom-text__left shuffle-text">Mandsaur, IN</span>
+            <span class="bottom-text__center ">
+                <a href="javascript:void(0);" onclick="openMusicPlayer()">
+                    <img src="../imgs/music.webp" class="music-icon" title="Music">
+                </a>
+            </span>
+            <span class="bottom-text__right shuffle-text">2025</span>
+        </div>
+
+        <!-- SLIDING INTRO -->
+        <div class="sliding-intro-container">
+            <div class="sliding-intro">
+                <span style="display:flex">
+                    <div class="half1">THINK</div>
+                    <div class="half1">UP</div>
+                    <div class="half2">'25</div>
+                </span>
+                <span style="display:flex">
+                    <div class="half1">THINK</div>
+                    <div class="half1">UP</div>
+                    <div class="half2">'25</div>
+                </span>
+                <span style="display:flex">
+                    <div class="half1">THINK</div>
+                    <div class="half1">UP</div>
+                    <div class="half2">'25</div>
+                </span>
+                <span style="display:flex">
+                    <div class="half1">THINK</div>
+                    <div class="half1">UP</div>
+                    <div class="half2">'25</div>
+                </span>
+                <span style="display:flex">
+                    <div class="half1">THINK</div>
+                    <div class="half1">UP</div>
+                    <div class="half2">'25</div>
+                </span>
+                <span style="display:flex">
+                    <div class="half1">THINK</div>
+                    <div class="half1">UP</div>
+                    <div class="half2">'25</div>
+                </span>
+                <span style="display:flex">
+                    <div class="half1">THINK</div>
+                    <div class="half1">UP</div>
+                    <div class="half2">'25</div>
+                </span>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="wrapper">
+            <!-- ABOUT SECTION -->
+            <div class="team-container">
+                <div class="team">
+                    <div class="team-heading">
+                        <p class="team-heading-text">About ThinkUp'25</p>
+                    </div>
+                    <div class="about-content" style="padding: 2rem 0; color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                            ThinkUp'25 is the flagship ideathon of Mandsaur University's techno-cultural fest, where innovation meets execution. 
+                            This premier competition challenges participants to think beyond conventional boundaries and develop groundbreaking solutions 
+                            that can reshape industries and solve real-world problems.
+                        </p>
+                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                            Whether you're passionate about business innovation or cutting-edge technology, ThinkUp'25 provides the perfect platform 
+                            to showcase your ideas, collaborate with like-minded innovators, and compete for substantial prizes while gaining 
+                            invaluable experience in the startup ecosystem.
+                        </p>
+                        <p style="font-size: 1.1rem; color: #ff0000; font-weight: bold;">
+                            Join us in this journey of innovation where ideas transform into reality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUBMISSION TYPES -->
+            <div class="team-container">
+                <div class="team">
+                    <div class="team-heading">
+                        <p class="team-heading-text">Submission Categories</p>
+                    </div>
+                    
+                    <div class="team-member" style="border-left: 3px solid #ff0000; padding-left: 1rem; margin-bottom: 2rem;">
+                        <span class="name" style="color: #ff0000; font-size: 1.3rem;">Business Oriented Ideas</span>
+                        <span class="role" style="display: block; margin-top: 0.5rem; color: #ccc; line-height: 1.6;">
+                            Focus on market-driven solutions, business models, entrepreneurial ventures, and commercial innovations. 
+                            Present ideas that address market gaps, improve business processes, or create new revenue streams.
+                        </span>
+                    </div>
+
+                    <div class="team-member" style="border-left: 3px solid #ff0000; padding-left: 1rem;">
+                        <span class="name" style="color: #ff0000; font-size: 1.3rem;">Technical Ideas</span>
+                        <span class="role" style="display: block; margin-top: 0.5rem; color: #ccc; line-height: 1.6;">
+                            Showcase cutting-edge technology solutions, software innovations, hardware prototypes, and technical breakthroughs. 
+                            Present ideas involving AI, blockchain, IoT, cybersecurity, or any emerging technology.
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TIMELINE -->
+            <!-- TIMELINE -->
+<div class="team-container">
+  <div class="team">
+    <div class="team-heading">
+      <p class="team-heading-text">Competition Timeline</p>
+    </div>
+
+    <div class="timeline-container" style="position: relative; padding: 2rem 0;">
+
+      <!-- Phase 1 -->
+      <div class="timeline-phase" style="margin-bottom: 3rem; position: relative;">
+        <div class="phase-number" style="color: #ff0000; font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">01</div>
+        <div class="team-member" style="border: 2px solid #ff0000; padding: 1.5rem; background: rgba(255,0,0,0.1);">
+          <span class="name" style="color: #ff0000; font-size: 1.4rem;">Registration Phase</span>
+          <span class="role" style="display: block; margin-top: 1rem; color: #fff; line-height: 1.6;">
+            Registration opens on <b>20th September 2025</b> and closes on <b>30th September 2025</b>.  
+            Submit your innovative idea with a detailed description including problem statement, proposed solution, 
+            target audience, and potential impact.
+          </span>
+          <div style="margin-top: 1rem; color: #ccc; font-size: 0.9rem;">
+            ↳ Shortlisted teams will be announced on <b>30th September 2025</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="timeline-phase" style="margin-bottom: 3rem; position: relative;">
+        <div class="phase-number" style="color: #ff0000; font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">02</div>
+        <div class="team-member" style="border: 2px solid #666; padding: 1.5rem;">
+          <span class="name" style="color: #fff; font-size: 1.4rem;">PPT Submission Phase</span>
+          <span class="role" style="display: block; margin-top: 1rem; color: #ccc; line-height: 1.6;">
+            From <b>1st October to 6th October 2025</b>, shortlisted teams must submit their PPT with details on solution 
+            architecture, business model, implementation strategy, and outcomes.
+          </span>
+          <div style="margin-top: 1rem; color: #ccc; font-size: 0.9rem;">
+            ↳ Finalist teams will be announced on <b>7th October 2025</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="timeline-phase" style="position: relative;">
+        <div class="phase-number" style="color: #ff0000; font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">03</div>
+        <div class="team-member" style="border: 2px solid #ff0000; padding: 1.5rem; background: rgba(255,0,0,0.1);">
+          <span class="name" style="color: #ff0000; font-size: 1.4rem;">Final Presentation Round</span>
+          <span class="role" style="display: block; margin-top: 1rem; color: #fff; line-height: 1.6;">
+            On <b>15th October 2025</b>, the top teams will present their ideas live.  
+            • <b>On-Campus (Offline)</b> – For Mandsaur University students.  
+            • <b>Online</b> – For students from other universities across India.  
+            This ensures nationwide participation.
+          </span>
+          <div style="margin-top: 1rem; color: #ccc; font-size: 0.9rem;">
+            ↳ Compete for the grand prize before expert judges
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+            <!-- PRIZES -->
+            <div class="team-container">
+                <div class="team">
+                    <div class="team-heading">
+                        <p class="team-heading-text">Prize Pool</p>
+                    </div>
+                    
+                    <div class="prizes-grid" style="display: grid; gap: 2rem; margin-top: 2rem;">
+                        <!-- First Prize -->
+                        <div class="team-member" style="border: 3px solid #ff0000; padding: 2rem; background: rgba(255,0,0,0.1); text-align: center;">
+                            <span class="name" style="color: #ff0000; font-size: 2.5rem; font-weight: bold; display: block;">₹5000</span>
+                            <span class="role" style="color: #fff; font-size: 1.2rem; margin-top: 0.5rem; display: block;">FIRST PRIZE</span>
+                            <div style="margin-top: 1rem; color: #ccc;">Winner takes all + Recognition</div>
+                        </div>
+
+                        <!-- Other Prizes -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                            <div class="team-member" style="border: 2px solid #666; padding: 1.5rem; text-align: center;">
+                                <span class="name" style="color: #fff; font-size: 1.8rem; font-weight: bold;">₹3000</span>
+                                <span class="role" style="color: #ccc; margin-top: 0.5rem; display: block;">Second Prize</span>
+                            </div>
+                            
+                            <div class="team-member" style="border: 2px solid #666; padding: 1.5rem; text-align: center;">
+                                <span class="name" style="color: #fff; font-size: 1.8rem; font-weight: bold;">₹2000</span>
+                                <span class="role" style="color: #ccc; margin-top: 0.5rem; display: block;">Third Prize</span>
+                            </div>
+                        </div>
+
+                        <!-- Special Categories -->
+                        <!-- <div style="margin-top: 2rem;">
+                            <h3 style="color: #ff0000; margin-bottom: 1rem; font-size: 1.3rem;">Special Category Awards</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div class="team-member" style="border: 1px solid #444; padding: 1rem; text-align: center;">
+                                    <span class="name" style="color: #ff0000; font-size: 1.1rem;">Best Technical Innovation</span>
+                                    <span class="role" style="color: #ccc; font-size: 0.9rem; display: block;">₹10,000</span>
+                                </div>
+                                <div class="team-member" style="border: 1px solid #444; padding: 1rem; text-align: center;">
+                                    <span class="name" style="color: #ff0000; font-size: 1.1rem;">Best Business Model</span>
+                                    <span class="role" style="color: #ccc; font-size: 0.9rem; display: block;">₹10,000</span>
+                                </div>
+                                <div class="team-member" style="border: 1px solid #444; padding: 1rem; text-align: center;">
+                                    <span class="name" style="color: #ff0000; font-size: 1.1rem;">Most Impactful Solution</span>
+                                    <span class="role" style="color: #ccc; font-size: 0.9rem; display: block;">₹10,000</span>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- REGISTRATION -->
+            <div class="team-container">
+                <div class="team">
+                    <div class="team-heading">
+                        <p class="team-heading-text">How to Register</p>
+                    </div>
+                    
+                    <div class="registration-steps" style="margin-top: 2rem;">
+                        <div class="team-member" style="margin-bottom: 2rem; border-left: 4px solid #ff0000; padding-left: 1.5rem;">
+                            <span class="name" style="color: #ff0000; font-size: 1.2rem;">Step 1: Team Formation</span>
+                            <span class="role" style="display: block; margin-top: 0.5rem; color: #ccc; line-height: 1.6;">
+                                Form teams of 2-4 members. Mix of technical and business skills recommended for balanced solutions.
+                            </span>
+                        </div>
+
+                        <div class="team-member" style="margin-bottom: 2rem; border-left: 4px solid #ff0000; padding-left: 1.5rem;">
+                            <span class="name" style="color: #ff0000; font-size: 1.2rem;">Step 2: Idea Submission</span>
+                            <span class="role" style="display: block; margin-top: 0.5rem; color: #ccc; line-height: 1.6;">
+                                Submit your idea through the official registration portal with detailed description and category selection.
+                            </span>
+                        </div>
+
+                        <div class="team-member" style="margin-bottom: 2rem; border-left: 4px solid #ff0000; padding-left: 1.5rem;">
+                            <span class="name" style="color: #ff0000; font-size: 1.2rem;">Step 3: Confirmation</span>
+                            <span class="role" style="display: block; margin-top: 0.5rem; color: #ccc; line-height: 1.6;">
+                                Receive confirmation email with competition guidelines, timeline, and further instructions.
+                            </span>
+                        </div>
+
+                        <!-- Registration Button -->
+                        <div style="text-align: center; margin-top: 3rem;">
+                            <a href="#" class="team-member" style="display: inline-block; border: 2px solid #ff0000; padding: 1rem 2rem; background: #ff0000; color: #fff; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease;">
+                                REGISTER NOW
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EVENT DETAILS -->
+            <div class="team-container">
+                <div class="team">
+                    <div class="team-heading">
+                        <p class="team-heading-text">Event Details</p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <div class="team-member" style="border: 1px solid #444; padding: 1.5rem;">
+                            <span class="name" style="color: #ff0000; font-size: 1.2rem;">Duration</span>
+                            <span class="role" style="display: block; margin-top: 0.5rem; color: #fff;">3-Phase Competition</span>
+                            <div style="color: #ccc; font-size: 0.9rem; margin-top: 0.5rem;">Spanning over 4 weeks</div>
+                        </div>
+
+                        <div class="team-member" style="border: 1px solid #444; padding: 1.5rem;">
+                            <span class="name" style="color: #ff0000; font-size: 1.2rem;">Team Size</span>
+                            <span class="role" style="display: block; margin-top: 0.5rem; color: #fff;">2-4 Members</span>
+                            <div style="color: #ccc; font-size: 0.9rem; margin-top: 0.5rem;">Cross-functional teams preferred</div>
+                        </div>
+
+                        <div class="team-member" style="border: 1px solid #444; padding: 1.5rem;">
+                            <span class="name" style="color: #ff0000; font-size: 1.2rem;">Format</span>
+                            <span class="role" style="display: block; margin-top: 0.5rem; color: #fff;">Hybrid Competition</span>
+                            <div style="color: #ccc; font-size: 0.9rem; margin-top: 0.5rem;">Online + Offline finale</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br><br><br><br>
+
+        <!-- FOOTER -->
+        <div id="footer">
+            <div class="footerTop">
+                <div class="footerLogo">
+                    <p>[TECHNO-CULTURAL FEST]</p>
+                    <h1>ThinkUp '25</h1>
+                </div>
+
+                <div class="footerLinks">
+                    <div class="footerColumn">
+                        <p class="linkHead">[NAVIGATE]</p>
+                        <div class="linkContainer">
+                            <a href="/public/aboutus.html" class="links">
+                                <p>001</p>
+                                <p>ABOUT</p>
+                            </a>
+                            <a href="https://hacksrm25.vercel.app/" class="links">
+                                <p>004</p>
+                                <p>ThinkUp'25</p>
+                            </a>
+                            <a href="/public/teams.html" class="links">
+                                <p>005</p>
+                                <p>TEAM</p>
+                            </a>
+                            <a href="/public/faq.html" class="links">
+                                <p>006</p>
+                                <p>FAQ</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footerColumn">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footerBottom">
+                <p>2025</p>
+                <div class="copyRights">
+                    <div class="council">
+                        <p>Mandsaur University <br>POWERED BY <a class="links" href="https://www.instagram.com/chancellorbrigadeofficial/?hl=en">CHANCELLOR'S BRIGADE</a></p>
+                    </div>
+                    <div class="webTeam">
+                        <p>DESIGNED BY <br><a class="links" href="https://github.com/iamkavy47">Kavy Porwal</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/favicon.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+
+    <script src="/scripts/events-loader.js"></script>
+    <script src="/scripts/cursor-follow.js"></script>
+    <script src="/scripts/cursor.js"></script>
+    <script src="/scripts/menu.js"></script>
+    <script src="/scripts/time.js"></script>
+    <script src="/scripts/teams-imgs.js"></script>
+    <script src="/scripts/link-hover.js"></script>
+    <script src="/scripts/music.js"></script>
+
+</body>
+
+</html>
