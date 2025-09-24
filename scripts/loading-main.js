@@ -39,13 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
       .to(indexVideo2, 
         { clipPath: "circle(0% at 50% 50%)", opacity: 0, duration: 0.5, ease: "power3.inOut", display: "none" }
       )
-      .fromTo(indexVideo3, 
-        { scale: 1, clipPath: "circle(0% at 50% 50%)", opacity: 0, display: "none" }, 
-        { clipPath: "circle(75% at 50% 50%)", opacity: 1, display: "block", duration: 0.8, ease: "power3.out" }
-      )
-      .to(indexVideo3, 
-        { clipPath: "circle(0% at 50% 50%)", opacity: 0, duration: 0.5, ease: "power3.inOut", display: "none" }
-      )
+      // .fromTo(indexVideo3, 
+      //   { scale: 1, clipPath: "circle(0% at 50% 50%)", opacity: 0, display: "none" }, 
+      //   { clipPath: "circle(75% at 50% 50%)", opacity: 1, display: "block", duration: 0.8, ease: "power3.out" }
+      // )
+      // .to(indexVideo3, 
+      //   { clipPath: "circle(0% at 50% 50%)", opacity: 0, duration: 0.5, ease: "power3.inOut", display: "none" }
+      // )
       .fromTo(indexVideo, 
         { scale: 1, clipPath: "circle(0% at 50% 50%)", opacity: 0, display: "none" }, 
         { clipPath: "circle(75% at 50% 50%)", opacity: 1, display: "block", duration: 0.8, ease: "power3.out" }
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth > 700) {
     const fallbackTimer = setTimeout(() => {
       handleLoadedAnimations();
-    }, 2000);
+    }, 1000);
 
     loadingVideo.addEventListener("loadeddata", () => {
       clearTimeout(fallbackTimer);
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const fallbackTimer = setTimeout(() => {
       handleLoadedAnimations();
-    }, 2000);
+    }, 1000);
 
     loadingVideo.addEventListener("loadeddata", () => {
       clearTimeout(fallbackTimer);
