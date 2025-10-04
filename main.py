@@ -1,17 +1,13 @@
 import pandas as pd
 import yagmail
 
-# Load Excel sheet
 df = pd.read_excel("data.xlsx")
 
-# Setup Gmail (your Gmail + app password)
 yag = yagmail.SMTP("kavyporwal75@gmail.com", "ndzg dnzp gcmk tqhv")
 
-# WhatsApp group + Google Form links
 whatsapp_link = "https://chat.whatsapp.com/CpjCf5dYJIB29zA2HbiWZx?mode=ems_copy_t"
 ppt_form_link = "https://forms.gle/BRBffNHVXu2Ypw5L9"
 
-# Loop through each participant
 for index, row in df.iterrows():
     name = row['Name']
     email = row['Email']
