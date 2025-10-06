@@ -9,9 +9,9 @@ whatsapp_link = "https://chat.whatsapp.com/CpjCf5dYJIB29zA2HbiWZx?mode=ems_copy_
 ppt_form_link = "https://forms.gle/BRBffNHVXu2Ypw5L9"
 
 for index, row in df.iterrows():
-    name = row['Name']
-    email = row['Email']
-    idea = row['Title']
+    name = row['First Name']
+    email = row['Email Address']
+    idea = row['Idea Title']
 
     subject = f"🎉 Congratulations {name}! You’re Selected for Round 2 of ThinkUp25"
 
